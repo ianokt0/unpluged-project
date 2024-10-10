@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erangel Fest 2024</title>
+    <link rel="stylesheet" href="/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        danger: '#da373d'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-orange-100">
+    <div id="root"></div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/babel-standalone@6/babel.js"></script>
+
+    <script type="text/babel">
+        const user = {
+            name: 'Tn Oktafian',
+            imageUrl: 'https://www.pngplay.com/wp-content/uploads/12/User-Avatar-Profile-PNG-Free-File-Download.png',
+            imageSize: 100,
+        }
+
+        // components
+        function Navbar() {
+            return (
+                <header class="rounded-lg">
+                    <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+                        <div class="flex hidden">
+                            <a href="#" class="-m-1.5 p-1.5">
+                                <span class="sr-only">Erangel Fest</span>
+                                <img class="h-8 w-auto" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600" alt="" />
+                            </a>
+                        </div>
+                        <div class="flex gap-x-12">
+                            <a href="#" class="text-sm font-semibold leading-6 text-yellow-900">Home</a>
+                            <a href="#" class="text-sm font-semibold leading-6 text-yellow-900">Rundown</a>
+                            <a href="#" class="text-sm font-semibold leading-6 text-yellow-900">Artist</a>
+                        </div>
+                        <div class="flex justify-end hidden">
+                            <a href="#" class="text-sm font-semibold leading-6 text-yellow-900">Log in <span aria-hidden="true">&rarr;</span></a>
+                        </div>
+                    </nav>
+                </header>
+
+            )
+        }
+
+        const Footer = () => {
+            return (
+                <footer className="mt-10 p-3">
+                    <small className="italic text-yellow-900">
+                        Made by <a href="https://instagram.com/ianokt_" className="font-bold" target="_blank">ianokt_</a> with React JS &nbsp;
+                        <b>
+                            &copy;
+                            {new Date().getFullYear()}
+                        </b>
+                    </small>
+                </footer>
+            )
+        }
+
+        function HomePage() {
+            return (
+                <div className="bg-yellow-400 w-full max-w-[500px] min-w-[400px] mx-auto lg:rounded-lg p-6 shadow-lg min-h-[100vh]">
+                    <Navbar />
+                    <h1 className="text-header text-yellow-800 font-bold text-2xl drop-shadow-lg">Erangel Fest 2024</h1>
+                    <img
+                        className="mx-auto mb-5 drop-shadow-2xl"
+                        src={user.imageUrl}
+                        alt={'Photo of ' + user.name}
+                        style={{
+                            width: user.imageSize,
+                            height: user.imageSize
+                        }}
+                    />
+                    <h1 className="text-xl">Welcome <strong className="text-yellow-800">{user.name}</strong></h1>
+                    <article>
+                        <h2 class="font-bold mt-5 text-yellow-900 text-lg">The Rules</h2>
+                        <p className="p-2 bg-orange-100 rounded-lg text-yelow-900">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores tempore sequi ut illo deleniti doloremque
+                            inventore suscipit? Id obcaecati iure deleniti nesciunt odit tempore tempora excepturi eum eos impedit sed
+                            consequatur consequuntur nemo amet accusamus eius quos fugiat, neque quibusdam sunt? Vero fuga, natus odit
+                            numquam perferendis culpa. Ab, voluptatum?
+                        </p>
+                        <h2 className="font-bold mt-5 text-yellow-900 text-lg">The Schedule</h2>
+                        <p className="p-2 bg-orange-100 text-yellow-900 rounded-lg">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto similique, architecto illum, eaque unde
+                            reiciendis, et autem asperiores fugiat repudiandae voluptas ipsa? Dicta vel dolores autem quam beatae,
+                            aperiam
+                            tenetur itaque molestias ab minus, aut suscipit facilis aspernatur quibusdam laborum iste, provident sint.
+                            Minus
+                            aliquam corporis error expedita voluptates reprehenderit dolore consectetur. Corporis, facere maiores saepe
+                            dolores nostrum minima est libero sequi maxime dignissimos delectus quidem, distinctio fuga recusandae
+                            perspiciatis expedita! Reiciendis, natus aperiam nam reprehenderit sequi exercitationem culpa nulla quis
+                            impedit
+                            quisquam repellendus fugit voluptatem facere atque voluptate. Ullam officia, ratione ipsam fuga quisquam
+                            soluta
+                            ducimus id maxime cumque.
+                        </p>
+                    </article>
+                    <Footer />
+                </div>
+            )
+        }
+        ReactDOM.render(
+            <HomePage />,
+            document.getElementById('root')
+        )
+    </script>
+</body>
+
+</html>

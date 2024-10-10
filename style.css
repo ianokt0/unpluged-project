@@ -1,0 +1,30 @@
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.burn {
+    background-image: url(image/flame.gif);
+    background-size: cover;
+    background-position: center;
+    color: transparent;
+    background-clip: text;
+}
+
+/* .container {
+    width: 100%;
+    max-width: 400px;
+    min-height: 200px;
+    margin: auto;
+} */
+
+.text-header {
+    text-align: center;
+    margin: 10px 10px;
+}
+
+/* @media only screen and(max-width:600px) {
+    .container {
+        max-width: 500px;
+    }
+} */
